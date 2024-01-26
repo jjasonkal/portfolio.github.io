@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <title>Job Interview Assignment</title>
+
+  <style>
+
+
+    body::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.88); /* Adjust opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Place it behind the content */
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("/assets/img/hero-bg.jpg") top right no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Fixed background */
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      flex-direction: column;
+    }
+  .container {
+      position: relative;
+      text-align: center;
+      margin-top: 0px;
+      padding-bottom: 10px; /* Added padding at the bottom */
+      margin-top: 5px; /* Adjusted margin-top to accommodate the header */
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay-image {
+      opacity: 1;
+    }
+
+
+    .image-container:hover .image-description {
+      opacity: 1;
+    }
+
+    .description-image {
+      margin-top: 20px;
+      text-align: center; /* Center the text */
+      font-size: 14px;
+      color: #777;
+      padding: 0 15%; /* Added padding of 20% of the width from both left and right edges */
+    }
+
+
+
+    .icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .icon:hover + .tooltip {
+      display: block;
+  </style>
+</head>
+
+<script>
+function goBackOrRedirect() {
+  if (document.referrer === window.location.href || document.referrer === "") {
+    // If the referrer is the same as the current page or empty (no history), redirect to index.html
+    window.location.href = 'index.html';
+  } else {
+    // Otherwise, go back
+    window.history.back();
+  }
+}
+</script>
+
+<body>
+
+      <nav id="navbar" class="navbar nav-menu-port" style="position: absolute; top: 22px; left: 9.5%;">
+    <ul>
+        <li>
+            <a href="javascript:void(0);" class="nav-link active" onclick="goBackOrRedirect()">
+                <i class="bx bx-arrow-back"></i> <span>Back</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <div class="port-title">
+      <h2>Job Interview Assignment</h2>
+    </div>
+
+  <div class="text-center">
+    <div class="card-port" style="width: 80%; display: inline-block;">
+              <div class="skill-cloud">
+                <span class="custom-skill-tag">Python</span>
+                <span class="custom-skill-tag">SQL</span>
+                <span class="custom-skill-tag">Docker</span>
+                <span class="custom-skill-tag">PostgreSQL</span>
+                <span class="custom-skill-tag">FastAPI</span>
+              </div>
+            </div>
+    </div>
+  </div>
+  <p class="abstract">This assignment involves the development of a data engineering solution that integrates weather forecast data from the Meteomatics Weather API into PostgreSQL and exposes the data through FastAPI endpoints that run complex dynamic SQL queries to retrieve the requested aggregated data. The process includes the use of Docker for containerization ensuring consistent environments and facilitating easy scaling, secure handling of sensitive information using environment variables, and sample tests that validate the functionality of each endpoint.</p>
+
+  <p class="body-text">
+  <strong>Task</strong>
+      <br>
+    - Create a program to retrieve 7-day weather forecasts for any 3 locations using the Meteomatics API.
+      <br>
+    - Store the data in a relational database with an appropriate schema.
+      <br>
+    - Develop an API that leverages the database to provide endpoints to list the following:
+
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; The latest forecasts for each location daily
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; The average of the last 3 forecasts for each location daily
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; The top n locations based on each forecast metric
+    <br><br>
+    <strong>Implementation</strong>
+      <br>
+This project utilizes Docker Compose to set up services for the Meteomatics Weather API Client, PostgreSQL, and FastAPI, enabling seamless integration across various operating systems and facilitating straightforward deployment on diverse devices. The Meteomatics Weather API Client manages data ingestion for three locations based on user input, implementing best practices for error handling through sophisticated try-and-except blocks and ensuring sensitive information security with environment variables. Subsequently, a dynamic Python script transforms the data into the appropriate schema by parsing the JSON response from the API and loading it into PostgreSQL tables.
+<br><br>
+Furthermore, FastAPI was chosen to create the various endpoints outlined in the task description. In the backend, there is a combination of Python and multiple complex dynamic SQL queries, capable of extracting data from PostgreSQL tables and executing the necessary functionality for each user-specified city. Each endpoint response must follow a predefined structure and the calculations are validated through tests that are based on static data, ensuring accuracy and data quality.
+<br><br>
+You can find a detailed report and the historical progress of the source code in this
+<a href="https://github.com/jjasonkal/assignment" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> Github Repository
+    </a>
+    </p>
+
+  <div class="container">
+    <div class="image-container">
+</div>
+
+</div>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Jason Kaltsikis</h3>
+      <p>“Civilization advances by extending the number of important operations we can perform without thinking of them.”<br>
+        - Alfred North Whitehead
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/jjasonkal" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/jason-kaltsikis-01b0b723a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.codewars.com/users/Jjason" class="codewars"><i class="bx bx-code"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>

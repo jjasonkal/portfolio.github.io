@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <title>Semantic image segmentation using depth estimation</title>
+
+  <style>
+
+
+    body::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.88); /* Adjust opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Place it behind the content */
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("/assets/img/hero-bg.jpg") top right no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Fixed background */
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      flex-direction: column;
+    }
+    .container {
+      position: relative;
+      text-align: center;
+      margin-top: 0px;
+      padding-bottom: 10px; /* Added padding at the bottom */
+      margin-top: 5px; /* Adjusted margin-top to accommodate the header */
+    }
+
+
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay-image {
+      opacity: 1;
+    }
+
+
+    .image-container:hover .image-description {
+      opacity: 1;
+    }
+
+    .description-image {
+      margin-top: 20px;
+      text-align: center; /* Center the text */
+      font-size: 14px;
+      color: #222;
+      padding: 0 15%; /* Added padding of 20% of the width from both left and right edges */
+    }
+
+
+
+
+
+
+    .icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .icon:hover + .tooltip {
+      display: block;
+  </style>
+</head>
+
+<script>
+function goBackOrRedirect() {
+  if (document.referrer === window.location.href || document.referrer === "") {
+    // If the referrer is the same as the current page or empty (no history), redirect to index.html
+    window.location.href = 'index.html';
+  } else {
+    // Otherwise, go back
+    window.history.back();
+  }
+}
+</script>
+
+<body>
+
+      <nav id="navbar" class="navbar nav-menu-port" style="position: absolute; top: 22px; left: 9.5%;">
+    <ul>
+        <li>
+            <a href="javascript:void(0);" class="nav-link active" onclick="goBackOrRedirect()">
+                <i class="bx bx-arrow-back"></i> <span>Back</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <div class="port-title">
+      <h2>Semantic image segmentation using depth estimation</h2>
+    </div>
+
+<div class="text-center">
+    <div class="card-port" style="width: 80%; display: inline-block;">
+        <div class="skill-cloud">
+            <span class="custom-skill-tag">Machine Learning</span>
+            <span class="custom-skill-tag">Computer Vision</span>
+            <span class="custom-skill-tag">Neural Networks</span>
+            <span class="custom-skill-tag">Python</span>
+            <span class="custom-skill-tag">PyTorch</span>
+            <span class="custom-skill-tag">Linux</span>
+            <span class="custom-skill-tag">ResNet-101</span>
+            <span class="custom-skill-tag">ImageNet</span>
+            <!-- Add more programming languages as needed -->
+        </div>
+    </div>
+</div>
+  <p class="abstract">This Diploma Thesis addresses domain adaptation challenges in semantic segmentation by leveraging self-supervised depth estimation and auxiliary tasks. It proposes innovative strategies, including explicit task feature correlation learning and adaptation difficulty refinement based on depth predictions. These techniques enhance model performance, leading to a significant improvement of <strong>4.79% mIoU</strong>.</p>
+
+  <p class="body-text">
+    In the last few years, Neural Networks have achieved overwhelming performance on many computer vision tasks.
+    However, they require a large amount of annotated data to be trained properly. The image labeling process for semantic segmentation is particularly demanding as every pixel has to be annotated with one of the possible classes. For this reason, this thesis utilizes a source domain dataset where the semantics are similar and the data is automatically labeled. Domain adaptation for semantic segmentation aims to improve the model performance in the presence of a distribution shift between source and target domain. Leveraging the supervision from auxiliary tasks such as depth estimation has the potential to heal this shift. However, depth information is not always available. Therefore, guidance from self-supervised depth estimation is used, which can be applied to both domains to bridge the domain gap. On the one hand, it is proposed to explicitly learn the task feature correlation to strengthen the target semantic predictions with the help of target depth estimation. On the other hand, the depth prediction discrepancy from source and target depth decoders are used to approximate the pixel-wise adaptation difficulty. The adaptation difficulty, inferred from depth, is then used to refine the target semantic segmentation pseudo-labels. This thesis exploits three simple but crucial training strategies, in addition to the baseline, to stabilize the training and avoid overfitting to the source domain:
+    <br>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;(1) Rare Class Sampling on the source domain improves the quality of the pseudo-labels by mitigating the confirmation bias of self-training toward common classes
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;(2) Learning Rate Warmup promote feature transfer from ImageNet pretraining
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;(3) Rare Class Mixing helps the network using more pixels of rare classes next to target domain pixels
+    <br>
+    <br>This approach improves baseline by <strong>4.79% mIoU</strong> for GTA→Cityscapes and enables better learning, especially in the classes where there is increased segmentation difficulty.
+  </p>
+
+  <div class="description-image">Hover for Demo</div>
+
+  <div class="container">
+    <div class="image-container">
+      <img src="/assets/img/portfolio/image73.png" alt="First Image">
+      <img class="overlay-image" src="/assets/img/portfolio/image136.png" alt="Second Image">
+    </div>
+  </div>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Jason Kaltsikis</h3>
+      <p>“Civilization advances by extending the number of important operations we can perform without thinking of them.”<br>
+        - Alfred North Whitehead
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/jjasonkal" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/jason-kaltsikis-01b0b723a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.codewars.com/users/Jjason" class="codewars"><i class="bx bx-code"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>

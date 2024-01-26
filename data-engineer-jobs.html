@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <title>Semantic image segmentation using depth estimation</title>
+
+  <style>
+
+
+    body::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.88); /* Adjust opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Place it behind the content */
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("/assets/img/hero-bg.jpg") top right no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Fixed background */
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      flex-direction: column;
+    }
+  .container {
+      position: relative;
+      text-align: center;
+      margin-top: 0px;
+      padding-bottom: 10px; /* Added padding at the bottom */
+      margin-top: 5px; /* Adjusted margin-top to accommodate the header */
+    }
+
+
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay-image {
+      opacity: 1;
+    }
+
+
+    .image-container:hover .image-description {
+      opacity: 1;
+    }
+
+    .description-image {
+      margin-top: 20px;
+      text-align: center; /* Center the text */
+      font-size: 14px;
+      color: #777;
+      padding: 0 15%; /* Added padding of 20% of the width from both left and right edges */
+    }
+
+
+
+    .icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .icon:hover + .tooltip {
+      display: block;
+  </style>
+</head>
+
+<script>
+function goBackOrRedirect() {
+  if (document.referrer === window.location.href || document.referrer === "") {
+    // If the referrer is the same as the current page or empty (no history), redirect to index.html
+    window.location.href = 'index.html';
+  } else {
+    // Otherwise, go back
+    window.history.back();
+  }
+}
+</script>
+
+<body>
+
+      <nav id="navbar" class="navbar nav-menu-port" style="position: absolute; top: 22px; left: 9.5%;">
+    <ul>
+        <li>
+            <a href="javascript:void(0);" class="nav-link active" onclick="goBackOrRedirect()">
+                <i class="bx bx-arrow-back"></i> <span>Back</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <div class="port-title">
+      <h2>Top Skills in Data Engineer Job Listings</h2>
+    </div>
+
+  <div class="text-center">
+    <div class="card-port" style="width: 80%; display: inline-block;">
+              <div class="skill-cloud">
+                <span class="custom-skill-tag">Python</span>
+                <span class="custom-skill-tag">Airflow</span>
+                <span class="custom-skill-tag">Selenium</span>
+                <span class="custom-skill-tag">Docker</span>
+                <span class="custom-skill-tag">PostgreSQL</span>
+                <span class="custom-skill-tag">RegEx</span>
+              </div>
+            </div>
+    </div>
+  </div>
+  <p class="abstract">This project consists of a robust Apache Airflow workflow automating the extraction of weekly job listing details from a popular job aggregator website through Selenium scraping. It uses PostgreSQL to store the scraped information in a useful schema containing historical data. Complemented by a Python script utilizing RegEx patterns, it can visually present the evolving demand for key skills in data engineering. Docker Compose seamlessly integrates these components, offering a concise yet powerful demonstration of automated data extraction, analysis, and visualization.</p>
+
+  <p class="body-text">
+Have you ever wondered which high-value skills could boost your chances of landing a dream job? What if there was a seamless way to discover the key skills tailored to your job title? This project would offer you an innovative solution that unlocks insights and propels your career aspirations.
+<br><br>
+Leveraging Docker Compose to set up services for Apache Airflow, Selenium, and PostgreSQL enables seamless integration across various operating systems and facilitates straightforward deployment on diverse devices. Apache Airflow efficiently orchestrates a Directed Acyclic Graph (DAG) on a weekly schedule, utilizing Selenium to open an automated driver capable of interacting with and extracting information from any web page. Selenium workflow is carefully designed for the specific website structure, enabling smooth navigation through pages, capturing job links, and extracting details such as titles, links, and content. This extracted data is then stored in a sophisticated PostgreSQL schema including timestamps for exploration of historical trends.
+<br><br>
+Enhancing this automated web-scraping workflow is a Python script that transforms raw data into useful insights. It establishes a connection with the PostgreSQL database and leverages RegEx patterns to extract core skills from job descriptions. Matplotlib then creates plots that visualize the new aggregated data to showcase the top skills in data engineering job listings. Furthermore, it can conduct a comparative analysis between this week and the previous one, offering insights into the evolution of these skills over time.
+  </p>
+
+  <div class="container">
+    <div class="image-container">
+      <img src="/assets/img/portfolio/top-skills-data-eng.png" alt="First Image">
+    </div>
+  </div>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Jason Kaltsikis</h3>
+      <p>“Civilization advances by extending the number of important operations we can perform without thinking of them.”<br>
+        - Alfred North Whitehead
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/jjasonkal" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/jason-kaltsikis-01b0b723a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.codewars.com/users/Jjason" class="codewars"><i class="bx bx-code"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>
