@@ -127,16 +127,16 @@ h6 {
   overflow-y: auto;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   #header {
-    width: 300px;
+    width: 180px;
     background: #fff;
     border-right: 1px solid #e6e9ec;
     left: -300px;
   }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #main {
     margin-left: 100px;
   }
@@ -282,7 +282,10 @@ h6 {
 /*
 */
 
-.nav-menu {
+
+@media (min-width: 992px) {
+
+    .nav-menu {
   padding: 0;
   display: block;
 }
@@ -326,8 +329,6 @@ h6 {
   color: #45505b;
 }
 
-@media (min-width: 20px) {
-
   .nav-menu a,
   .nav-menu a:focus {
     width: 56px;
@@ -338,9 +339,8 @@ h6 {
     display: none;
     color: #fff;
   }
-}
 
-.nav-menu a:hover,
+  .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
@@ -365,6 +365,95 @@ h6 {
 .nav-menu li:hover>a span {
   display: block;
 }
+}
+
+@media (max-width: 992px) {
+  .nav-menu {
+    padding: 0;
+    display: block;
+  }
+
+  .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .nav-menu>ul>li {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .nav-menu a,
+  .nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: #45505b;
+    padding: 10px 18px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s, color 0.3s; /* Set transition for background-color and color */
+    font-size: 15px;
+    border-radius: 50px;
+    background: #f2f3f5;
+    height: 56px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .nav-menu a i,
+  .nav-menu a:focus i {
+    font-size: 20px;
+  }
+
+  .nav-menu a span,
+  .nav-menu a:focus span {
+    padding: 0 5px 0 7px;
+    color: #45505b;
+    transition: color 0.3s; /* Set the same transition duration for the span */
+  }
+
+  /* Disable click and hover animation */
+  .nav-menu a:active,
+  .nav-menu a:focus:active,
+  .nav-menu a:hover,
+  .nav-menu a:focus:hover {
+    transition: none;
+    background-color: transparent; /* No background change on interaction */
+    color: #fff;
+  }
+
+  .nav-menu .active,
+  .nav-menu .active:focus,
+  .nav-menu li:hover>a,
+  .nav-menu li:hover>a span {
+    color: #fff;
+    background: #0563bb;
+  }
+
+  .nav-menu .active span,
+  .nav-menu .active:focus span,
+  .nav-menu li:hover>a span {
+    color: #fff;
+    transition: none; /* Disable transition for span changes on hover/click */
+  }
+
+  .nav-menu a:hover,
+  .nav-menu li:hover>a {
+    width: 100%;
+  }
+
+  .nav-menu a:hover span,
+  .nav-menu li:hover>a span {
+    display: block;
+    transition: none; /* Disable transition for span changes on hover/click */
+  }
+
+  /* Set span background-color to transparent on click */
+  .nav-menu a:active span,
+  .nav-menu a:focus:active span {
+    background-color: transparent;
+  }
+}
+
 
 /**
 * Mobile Navigation 
@@ -385,9 +474,6 @@ h6 {
   padding: 5px;
 }
 
-.mobile-nav-toggle i {
-  color: #45505b;
-}
 
 .mobile-nav-active {
   overflow: hidden;
@@ -562,7 +648,7 @@ section {
 }
 
 /* Adjust font size for medium screens (col-md-6) */
-@media (min-width: 300px) and (max-width: 991px) {
+@media (min-width: 300px) and (max-width: 992px) {
     .port-title {
       text-align: center;
       padding-top: 30px;
@@ -745,7 +831,7 @@ section {
   }
 
   /* Adjust font size for medium screens (col-md-6) */
-@media (min-width: 300px) and (max-width: 991px) {
+@media (min-width: 300px) and (max-width: 992px) {
       .tag-body {
     text-align: center; /* Center the text */
     background-color: rgba(240, 240, 240, 0); /* White background with 0 opacity */
@@ -795,7 +881,7 @@ section {
 }
 
 /* Adjust font size for medium screens (col-md-6) */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .responsive-font {
         font-size: 14px;
     }
