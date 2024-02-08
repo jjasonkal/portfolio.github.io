@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+  <title>Semantic image segmentation using depth estimation</title>
+
+  <style>
+
+
+    body::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.88); /* Adjust opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Place it behind the content */
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("/assets/img/hero-bg.jpg") top right no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Fixed background */
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      flex-direction: column;
+    }
+  .container {
+      position: relative;
+      text-align: center;
+      margin-top: 0px;
+      padding-bottom: 10px; /* Added padding at the bottom */
+      margin-top: 5px; /* Adjusted margin-top to accommodate the header */
+    }
+
+
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay-image {
+      opacity: 1;
+    }
+
+
+    .image-container:hover .image-description {
+      opacity: 1;
+    }
+
+    .description-image {
+      margin-top: 20px;
+      text-align: center; /* Center the text */
+      font-size: 14px;
+      color: #777;
+      padding: 0 15%; /* Added padding of 20% of the width from both left and right edges */
+    }
+
+
+
+    .icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .icon:hover + .tooltip {
+      display: block;
+  </style>
+</head>
+
+<script>
+function goBackOrRedirect() {
+  if (document.referrer === window.location.href || document.referrer === "") {
+    // If the referrer is the same as the current page or empty (no history), redirect to index.html
+    window.location.href = 'index.html';
+  } else {
+    // Otherwise, go back
+    window.history.back();
+  }
+}
+</script>
+
+<body>
+
+      <nav id="navbar" class="navbar nav-menu-port" style="position: absolute; top: 22px; left: 9.5%;">
+    <ul>
+        <li>
+            <a href="javascript:void(0);" class="nav-link active" onclick="goBackOrRedirect()">
+                <i class="bx bx-arrow-back"></i> <span>Back</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+    <div class="port-title">
+      <h2>AWS Daily Incremental ETL</h2>
+    </div>
+
+  <div class="text-center">
+    <div class="card-port" style="width: 80%; display: inline-block;">
+              <div class="skill-cloud">
+                <span class="custom-skill-tag">Lambda</span>
+                <span class="custom-skill-tag">Glue</span>
+                <span class="custom-skill-tag">S3</span>
+                <span class="custom-skill-tag">Athena</span>
+                <span class="custom-skill-tag">Cloudformation</span>
+                <span class="custom-skill-tag">Python</span>
+                <span class="custom-skill-tag">EventBridge</span>
+                <span class="custom-skill-tag">S3 Partitions</span>
+                <span class="custom-skill-tag">S3 Events</span>
+              </div>
+            </div>
+    </div>
+  </div>
+  <p class="abstract">
+    This project automates the daily incremental extraction, transformation, and loading (ETL) of meteo data from the Open-Meteo API using AWS services. Leveraging AWS Lambda, Amazon S3, AWS Glue, Amazon Athena, and AWS CloudFormation it establishes an easily scalable data pipeline. The first Lambda function uploads raw JSON data that is retrieved from the API to a raw data S3 Bucket and is triggered daily via EventBridge. The second Lambda function transforms the new data into clean CSV format, uploads them in the transformed data S3 Bucket, and is triggered by S3 put events of the raw data S3 Bucket. Additionally, after the successful data transformation, this Lambda function programmatically invokes the Glue crawler which performs incremental loads into the Glue Data Catalog, crawling only the new partition folders. Amazon Athena is utilized to analyze the data, querying the overall table in the Glue Data Catalog. The specified architecture is configured in a CloudFormation template providing a reliable, reproducible, and version-able deployment mechanism that can be applied to different regions or accounts. This solution offers a cost-effective and highly scalable approach for daily incremental ETL, facilitating extensive analysis and insights derivation.
+  </p>
+
+  <div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+    <div class="image-container">
+      <img src="assets/img/portfolio/aws-daily-incremental-etl-architecture.png" alt="AWS architecture">
+    </div>
+  </div>
+
+  <h3 class="body-text">Analysis</h3>
+  <p class="body-text">
+  The integration of the AWS Glue Data Catalog with Amazon S3 and Amazon Athena forms a robust foundation for efficient data management and analysis. By leveraging the Glue Data Catalog, which contains metadata information about table schemas populated by Glue crawlers, you can seamlessly query data in Athena directly from S3. Furthermore, the implementation of partitions within S3 enhances query performance by reducing the amount of scanned data, thereby optimizing query execution speed and cost. In this specific project, an example is provided that aggregates hourly timestamp data obtained from the Open-Meteo API into daily summaries, such as finding the average temperature for each date, so you can easily compare temperature trends over time. This is just one example of the numerous analyses that can be performed, showcasing the versatility and power of integrated AWS services in extracting valuable insights from cost-effective data stored on S3.
+  </p>
+  <div class="container">
+  <div class="image-container-smaller">
+    <img src="assets/img/portfolio/athena-results.png" alt="AthenaResults">
+  </div>
+</div>
+     <h3 class="body-text">Instructions</h3>
+        <p class="body-text">
+    To create the AWS CloudFormation stack, follow these steps:
+    <ol>
+           <li class="body-text">Create an Amazon S3 bucket in the same AWS Region where you plan to create the CloudFormation stack and populate it with the Lambda Functions zip and CloudFormation YAML template.</li>
+           <li class="body-text">Create a new IAM role specifically for the CloudFormation service that grants the necessary permissions to create all the resources defined in your CloudFormation template.</li>
+           <li class="body-text">When creating the CloudFormation stack fill in the SourceCodeBucket parameter with the S3 bucket name (e.g. my-code-bucket-123) of the one you previously created and uploaded the source files.</li>
+        </ol>
+        </p>
+       <p class="body-text">
+       You can find the Lambda Functions source code and the CloudFormation template in this
+        <a href="https://github.com/jjasonkal/aws-daily-incremental-etl" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> Github Repository
+        </a>
+        </p>
+  <div class="container">
+    <div class="image-container-smaller">
+      <img src="assets/img/portfolio/cloudformation-s3-zip.png" alt="CloudformationS3Zip">
+    </div>
+  </div>
+
+  <h3 class="body-text">Partitions</h3>
+  <p class="body-text">
+  When AWS Glue's crawler scans Amazon S3 and identifies multiple folders within a bucket, it establishes the root of a table within the folder structure and identifies which folders serve as partitions for the table. The table's name is derived from the Amazon S3 prefix or folder name. By providing an Include path pointing to the folder level to be crawled, you guide the crawler's behavior. When the schemas across most folders at a particular level are similar, the crawler consolidates partitions into a single table instead of creating separate tables.
+  <br><br>
+  Partitioning in Amazon S3 offers several benefits for query optimization and incremental crawling. Firstly, it allows for more efficient query processing by restricting the scope of data scanned based on the partition key, thereby reducing query execution time and cost. In Athena queries, partitioning enables faster query execution by leveraging partition pruning, which skips irrelevant partitions based on the query predicates, resulting in quicker data retrieval and improved query performance. Secondly, during incremental crawling, partitioning enables the crawler to identify and process only the newly added or modified data partitions, enhancing the efficiency of data ingestion and minimizing unnecessary processing.  </p>
+  <div class="container">
+      <div class="image-container-smaller">
+        <img src="assets/img/portfolio/s3-partitions.png" alt="Partitions" style="max-width: 100%;">
+      </div>
+  </div>
+
+  <h3 class="body-text">Incremental Crawling</h3>
+  <p class="body-text">
+  When you schedule a crawler to discover data in Amazon S3, you can choose to crawl all folders or crawl new folders only. In the first mode, every time the crawler runs, it scans data in every folder under the root path it was configured to crawl. This can be slow for large tables because, on every run, the crawler must list all objects and then compare metadata to identify new objects. In the second mode, commonly referred as incremental crawling, every time the crawler runs, it processes only S3 folders that were added since the last crawl. Incremental crawls can reduce runtime and cost when used with datasets that append new objects with consistent schema on a regular basis.  <div class="container">
+    <div class="image-container-smaller">
+      <img src="assets/img/portfolio/s3-new-partitions.png" alt="NewPartitions">
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="image-container">
+</div>
+</div>
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Jason Kaltsikis</h3>
+      <p>“Civilization advances by extending the number of important operations we can perform without thinking of them.”<br>
+        - Alfred North Whitehead
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/jjasonkal" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/jason-kaltsikis-01b0b723a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.codewars.com/users/Jjason" class="codewars"><i class="bx bx-code"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>

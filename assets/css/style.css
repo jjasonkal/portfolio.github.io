@@ -769,16 +769,60 @@ section {
       width: 100%;
       max-width: 100vh; /* Adjusted max-width for maintaining aspect ratio */
       position: relative; /* Added relative positioning */
-      padding-bottom: 40px; /* Added padding at the bottom */
-
     }
 
-    .image-container img {
-      display: block;
-      border-radius: 30px; /* Added rounded edges */
-      width: 100%; /* Make the image fill the container */
-      height: auto; /* Maintain aspect ratio */
-    }
+    .image-container {
+  display: inline-block;
+  border-radius: 8px; /* Added rounded edges */
+  overflow: hidden; /* Ensures the rounded corners are applied */
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.1); /* Added smooth shadow effect */
+}
+
+.image-container img {
+  display: block;
+  border-radius: 8px; /* Added rounded edges */
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (min-width: 992px) {
+.image-container-smaller {
+  position: relative;
+  display: inline-block;
+  border-radius: 30px; /* Added rounded edges */
+  overflow: hidden; /* Ensures the rounded corners are applied */
+  width: 60%; /* Set width to 80% */
+  max-width: 100%; /* Adjusted max-width for maintaining aspect ratio */
+  position: relative; /* Added relative positioning */
+}
+}
+
+@media (max-width: 992px) {
+.image-container-smaller {
+  position: relative;
+  display: inline-block;
+  border-radius: 30px; /* Added rounded edges */
+  overflow: hidden; /* Ensures the rounded corners are applied */
+  width: 100%; /* Set width to 80% */
+  max-width: 100%; /* Adjusted max-width for maintaining aspect ratio */
+  position: relative; /* Added relative positioning */
+}
+}
+
+.image-container-smaller {
+  display: inline-block;
+  border-radius: 8px; /* Added rounded edges */
+  overflow: hidden; /* Ensures the rounded corners are applied */
+  box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.1); /* Added smooth shadow effect */
+}
+
+.image-container-smaller img {
+  display: block;
+  border-radius: 8px; /* Added rounded edges */
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
 
 
 .skills .progress {
