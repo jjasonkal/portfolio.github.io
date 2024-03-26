@@ -130,9 +130,15 @@ function goBackOrRedirect() {
   // Get the referrer URL
   var referrer = document.referrer;
 
-  // Check if the referrer is empty or if it's not 'index.html'
-  if (referrer === "" || !referrer.endsWith("index.html")) {
-    // If the referrer is empty or not 'index.html', redirect to 'index.html'
+  // Create a URL object from the referrer
+  var referrerUrl = new URL(referrer);
+
+  // Get the hostname of the referrer
+  var referrerHostname = referrerUrl.hostname;
+
+  // Check if the referrer is empty or if it's not from 'jasonkaltsikis.gr'
+  if (referrer === "" || referrerHostname !== "jasonkaltsikis.gr") {
+    // If the referrer is empty or not from 'jasonkaltsikis.gr', redirect to 'index.html'
     window.location.href = 'index.html';
   } else {
     // Otherwise, go back
