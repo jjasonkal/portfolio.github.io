@@ -128,8 +128,12 @@
 
 <script>
 function goBackOrRedirect() {
-  if (document.referrer === window.location.href || document.referrer === "") {
-    // If the referrer is the same as the current page or empty (no history), redirect to index.html
+  // Get the referrer URL
+  var referrer = document.referrer;
+
+  // Check if the referrer is empty or if it's not 'index.html'
+  if (referrer === "" || !referrer.endsWith("index.html")) {
+    // If the referrer is empty or not 'index.html', redirect to 'index.html'
     window.location.href = 'index.html';
   } else {
     // Otherwise, go back
