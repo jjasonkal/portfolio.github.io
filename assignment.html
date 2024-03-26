@@ -136,16 +136,26 @@ function goBackOrRedirect() {
   // Get the hostname of the referrer
   var referrerHostname = referrerUrl.hostname;
 
-  // Check if the referrer is empty or if it's not from 'jasonkaltsikis.gr'
-  if (referrer === "" || referrerHostname !== "jasonkaltsikis.gr") {
-    // If the referrer is empty or not from 'jasonkaltsikis.gr', redirect to 'index.html'
-    window.location.href = 'index.html';
-  } else {
-    // Otherwise, go back
+  // Get the hostname of the current URL
+  var currentHostname = window.location.hostname;
+
+  // Check if the root domains are the same
+  if (getDomainRoot(referrerHostname) === getDomainRoot(currentHostname)) {
+    // If the root domains are the same, go back
     window.history.back();
+  } else {
+    // If not, redirect to 'index.html'
+    window.location.href = 'index.html';
   }
 }
+
+// Function to get the root domain
+function getDomainRoot(hostname) {
+  var parts = hostname.split('.');
+  return parts.slice(-2).join('.');
+}
 </script>
+
 
 <body>
 
