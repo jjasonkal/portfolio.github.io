@@ -1049,17 +1049,17 @@ section {
   content: "";
   background: rgba(255, 255, 255, 0.7);
   position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 30px;
-  bottom: 30px;
+  left: 0; /* changed from 30px */
+  right: 0; /* changed from 30px */
+  top: 0; /* changed from 30px */
+  bottom: 0; /* changed from 30px */
   transition: all ease-in-out 0.3s;
   z-index: 2;
-  opacity: 0;
+  opacity: 1; /* changed from 0 */
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
-  opacity: 0;
+  opacity: 1; /* changed from 0 */
   position: absolute;
   top: 0;
   left: 0;
@@ -1080,8 +1080,8 @@ section {
   width: 48px;
   height: 48px;
   position: absolute;
-  top: 35px;
-  left: 35px;
+  top: 15px; /* changed from 35px */
+  left: 15px; /* changed from 35px */
   border-top: 3px solid #d7dce1;
   border-left: 3px solid #d7dce1;
   transition: all 0.5s ease 0s;
@@ -1094,8 +1094,8 @@ section {
   width: 48px;
   height: 48px;
   position: absolute;
-  bottom: 35px;
-  right: 35px;
+  bottom: 15px; /* changed from 35px */
+  right: 15px; /* changed from 35px */
   border-bottom: 3px solid #d7dce1;
   border-right: 3px solid #d7dce1;
   transition: all 0.5s ease 0s;
@@ -1133,27 +1133,6 @@ section {
   color: #148af9;
 }
 
-.portfolio .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info {
-  opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::before {
-  top: 15px;
-  left: 15px;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::after {
-  bottom: 15px;
-  right: 15px;
-}
 
 /*--------------------------------------------------------------
 # Portfolio Details
