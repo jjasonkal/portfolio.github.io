@@ -130,22 +130,21 @@ function goBackOrRedirect() {
   // Get the referrer URL
   var referrer = document.referrer;
 
-  // Create a URL object from the referrer
-  var referrerUrl = new URL(referrer);
-
-  // Get the hostname of the referrer
-  var referrerHostname = referrerUrl.hostname;
+  // Helper function to get the root domain
+  function getDomainRoot(hostname) {
+    return hostname.split('.').slice(-2).join('.');
+  }
 
   // Get the hostname of the current URL
   var currentHostname = window.location.hostname;
 
-  // Check if the root domains are the same
-  if (getDomainRoot(referrerHostname) === getDomainRoot(currentHostname)) {
-    // If the root domains are the same, go back
-    window.history.back();
-  } else {
-    // If not, redirect to 'index.html'
+  // Check if there is no referrer or if the root domains are different
+  if (!referrer || getDomainRoot(new URL(referrer).hostname) !== getDomainRoot(currentHostname)) {
+    // If no referrer or referrer is from a different site, redirect to 'index.html'
     window.location.href = 'index.html';
+  } else {
+    // If referrer is from the same site, go back
+    window.history.back();
   }
 }
 
